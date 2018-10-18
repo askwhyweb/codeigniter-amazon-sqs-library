@@ -17,11 +17,10 @@ $config['aws_version'] = 'latest'; // change per need
 Your codeigniter application is easy to setup with library. You need to make sure you setup the config.php properly. This is the very first step. Afterwards, you can use following code to call the request.
 ``` PHP
 $this->load->library('amazon_sqs');
-$sqsdata; // TODO, Made this as a 2d Array, and use following methods to create a ticket accordingly.
 $message = 'ABCD';
 $attributes = array(); // optional, 2d array of attributes. e.g. ["TicketSubject" => ['DataType' => "String",'StringValue' => "Some test ticket subject"], "TicketID" => ['DataType' => "Number", 'StringValue' => "12069607"]]
 $delay = 0; 
-$result = $this->amazon_sqs->createTicket($messagem, $attributes, $delay);
+$result = $this->amazon_sqs->createTicket($message, $attributes, $delay);
 print_r($result); // You will notice the debug data available in response for further proceeding or troubleshooting.
 ```
 
